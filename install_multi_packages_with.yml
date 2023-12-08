@@ -1,0 +1,16 @@
+---
+- name: This playbook install multi packages by using with items
+  hosts: webservers
+  become: true
+  tasks:
+  - name: installing multi packages
+    yum:
+      name: "{{ item }}"  # Here using with items to install multiple packages.with items not recommended .
+      state: installed
+    with_items:
+      - git
+      - make
+      - gcc
+      - wget
+      - telnet
+      - gzip

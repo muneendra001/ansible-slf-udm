@@ -1,0 +1,10 @@
+---
+- name: ansible playbook to creates user by using variables
+  hosts: all
+  become: true
+  vars:
+    user: sachin
+  tasks:
+  - name: creating user john
+    user:
+      name: "{{ user }}"  # Variable need to defined as like this,if the value is the first word then need to mention double quotes(""),if value is after the first word no need of " ".

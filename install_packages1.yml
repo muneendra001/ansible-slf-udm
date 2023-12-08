@@ -1,0 +1,10 @@
+---
+- name: This playbook install packages
+  hosts: webservers
+  # become: true
+  tasks:
+  - name: installing TREE  package
+    yum:
+      name: tree
+      state: installed
+# In this file become(root user) commented so need to mention -b while executing playbook.

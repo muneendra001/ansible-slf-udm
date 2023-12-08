@@ -1,0 +1,11 @@
+---
+- name: This playbook is to create user
+  hosts: all
+  become: true
+  tasks:
+  - name: creating user john
+    user: name=john  
+#if attributes in same line use as above
+#if different line use as below
+#user:
+#  name: john

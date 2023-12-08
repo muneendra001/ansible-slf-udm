@@ -1,0 +1,14 @@
+---
+- name: ansible playbook to creates user by using variable from external file
+  hosts: all
+  become: true
+  vars_files:  # Variable from external file user.yml
+    - user.yml
+  tasks:
+  - name: creating user {{ user }}
+    user:
+      name: "{{ user }}"  # Variable need to defined as like this,if the value is the first word then need to mention double quotes(""),if value is after the first word no need of " ".
+
+
+
+  # ansible-playbook -i hosts create_user_var_external.yml -e "user=sonia" --This command is to use for passing variable while running playbook.

@@ -1,0 +1,14 @@
+---
+- name: This playbook to creates a file
+  hosts: all
+    #become: true
+  gather_facts: no   # Gather facts will do retrieve(pull) information of the target servers(hosts). 
+  tasks:
+  - name: creating a file
+    file:
+      path: /home/ansadmin/demofile1.txt
+      state: touch
+
+
+# If we mention become=true,then file ownership (created) as a root user
+# first it logined as a ansadmin then file created as a root user.
